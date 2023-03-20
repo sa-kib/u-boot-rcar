@@ -13,3 +13,20 @@ config SYS_CONFIG_NAME
 	default "spider"
 
 endif
+
+if TARGET_SPIDER_XEN
+
+config SYS_SOC
+	default "rmobile"
+
+config SYS_BOARD
+	default "spider-xen"
+
+config SYS_VENDOR
+	default "renesas"
+
+config SYS_CONFIG_NAME
+	default "salvator-x-xen"
+
+endif
+

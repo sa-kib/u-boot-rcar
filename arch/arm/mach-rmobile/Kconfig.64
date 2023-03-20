@@ -114,7 +114,6 @@ config TARGET_SALVATOR_X_XEN
 	select LINUX_KERNEL_IMAGE_HEADER
 	imply R8A7795
 	imply SYS_MALLOC_F
-	imply MULTI_DTB_FIT
 	imply MULTI_DTB_FIT_USER_DEFINED_AREA
 	help
           Support for Renesas R-Car Gen3 platform on Xen DomD
@@ -191,6 +190,15 @@ config TARGET_WHITEHAWK
 	imply R8A779G0
 	help
 	  Support for Renesas R-Car Gen4 White Hawk platform
+
+config TARGET_SPIDER_XEN
+	bool "Spider board on Xen DomD"
+	select LINUX_KERNEL_IMAGE_HEADER
+	imply R8A779F0
+	imply SYS_MALLOC_F
+	help
+          Support for Renesas R-Car Gen4 platform on Xen DomD
+
 
 endchoice
 
