@@ -1,8 +1,8 @@
-// SPDX-License-Identifier: GPL-2.0+
+// spdx-license-identifier: gpl-2.0+
 /**
- * cdns-platform.c - Platform driver for Cadence UFSHCI device
+ * cdns-platform.c - platform driver for cadence ufshci device
  *
- * Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com
+ * copyright (c) 2019 texas instruments incorporated - http://www.ti.com
  */
 
 #include <clk.h>
