@@ -349,6 +349,7 @@ static int rcar_ufs_pltfm_remove(struct udevice *dev)
 {
 	int err;
 	u32 val;
+	struct clk clk;
 	struct ufs_hba *hba = dev_get_uclass_priv(dev);
 
 	ufshcd_writel(hba, CONTROLLER_DISABLE,  REG_CONTROLLER_ENABLE);
@@ -358,6 +359,11 @@ static int rcar_ufs_pltfm_remove(struct udevice *dev)
 				       10, 1000);
 	if (err)
 		dev_err(dev, "%s: Controller disable failed\n", __func__);
+
+	if ((err = clk_get_by_index(dev, 0, &clk)) == 0)
+		err = clk_disable(&clk);
+	if (err)
+		dev_err(dev, "clock disable failed (%d)\n", err);
 	return err;
 }
 
